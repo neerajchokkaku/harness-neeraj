@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# IDE/Editor settings
+.vscode/
+.idea/
+.DS_Store
+
+# Build outputs
+dist/
+build/
