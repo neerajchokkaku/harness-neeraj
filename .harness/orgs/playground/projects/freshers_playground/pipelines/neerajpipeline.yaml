@@ -41,8 +41,13 @@ pipeline:
                     command: npm install
               - step:
                   type: Test
-                  name: Test_1
+                  name: Test
                   identifier: Test_1
-                  spec: {}
+                  spec:
+                    shell: Sh
+                    command: |-
+                      set -e
+                      npm run test
+                    intelligenceMode: true
           buildIntelligence:
             enabled: true
