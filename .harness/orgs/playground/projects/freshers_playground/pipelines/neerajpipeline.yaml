@@ -1,0 +1,48 @@
+pipeline:
+  name: neeraj-pipeline
+  identifier: neerajpipeline
+  projectIdentifier: freshers_playground
+  orgIdentifier: playground
+  description: neeraj-pipeline CI
+  tags:
+    neerajpipeline: ""
+    pipeline: ""
+  properties:
+    ci:
+      codebase:
+        repoName: harness-neeraj
+        build: <+input>
+  stages:
+    - stage:
+        name: build
+        identifier: build
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: false
+            paths: []
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: dependencies
+                  identifier: dependencies
+                  spec:
+                    shell: Sh
+                    command: npm install
+              - step:
+                  type: Test
+                  name: Test_1
+                  identifier: Test_1
+                  spec: {}
+          buildIntelligence:
+            enabled: true
